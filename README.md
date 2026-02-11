@@ -11,7 +11,7 @@
     # dotnet 10 SDK
     powershell -ExecutionPolicy bypass -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; & { iwr https://dot.net/v1/dotnet-install.ps1 -OutFile dotnet-install.ps1 }; ./dotnet-install.ps1 -Channel 10.0"
 
-    setx PATH "%PATH%;%UserProfile%\.dotnet\tools"
+    [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";%UserProfile%\.dotnet\tools", "User")
 
     dotnet new update
 ```
@@ -22,3 +22,7 @@
 
     dotnet new console -o TddKata.CSharp
 ```
+
+## Visual Code Extensions
+
+- [ms-dotnettools.csdevkit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
