@@ -13,7 +13,7 @@
       "obj/": true,
       ".vs/": true,
       "**/*.sln": true,
-      "**/*.csproj": true,
+      // "**/*.csproj": true,
       "**/*.esproj": true,
       "**/.vscode": true,
       "**/env.d.ts": true
