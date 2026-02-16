@@ -13,12 +13,13 @@
     <SourceRoot Include="C:\Users\Richie.Danks\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.testing.platform\2.0.2\buildTransitive\net8.0\Microsoft.Testing.Platform.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.platform\2.0.2\buildTransitive\net8.0\Microsoft.Testing.Platform.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.testing.platform\2.0.2\buildTransitive\net9.0\Microsoft.Testing.Platform.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.platform\2.0.2\buildTransitive\net9.0\Microsoft.Testing.Platform.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.testing.platform.msbuild\2.0.2\buildTransitive\Microsoft.Testing.Platform.MSBuild.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.platform.msbuild\2.0.2\buildTransitive\Microsoft.Testing.Platform.MSBuild.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.testing.extensions.telemetry\2.0.2\buildTransitive\net8.0\Microsoft.Testing.Extensions.Telemetry.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.extensions.telemetry\2.0.2\buildTransitive\net8.0\Microsoft.Testing.Extensions.Telemetry.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.testing.extensions.telemetry\2.0.2\buildTransitive\net9.0\Microsoft.Testing.Extensions.Telemetry.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.extensions.telemetry\2.0.2\buildTransitive\net9.0\Microsoft.Testing.Extensions.Telemetry.props')" />
     <Import Project="$(NuGetPackageRoot)xunit.v3.core.mtp-v2\3.2.2\buildTransitive\xunit.v3.core.mtp-v2.props" Condition="Exists('$(NuGetPackageRoot)xunit.v3.core.mtp-v2\3.2.2\buildTransitive\xunit.v3.core.mtp-v2.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\Richie.Danks\.nuget\packages\xunit.analyzers\1.27.0</Pkgxunit_analyzers>
+    <PkgSonarAnalyzer_CSharp Condition=" '$(PkgSonarAnalyzer_CSharp)' == '' ">C:\Users\Richie.Danks\.nuget\packages\sonaranalyzer.csharp\10.19.0.132793</PkgSonarAnalyzer_CSharp>
   </PropertyGroup>
 </Project>

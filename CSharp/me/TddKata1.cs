@@ -1,1 +1,0 @@
-Console.WriteLine("Hello, TDD Kata 1!");
