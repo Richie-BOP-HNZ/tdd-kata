@@ -5,3 +5,6 @@
 .vs/
 bin/
 obj/
+
+CSharp/me/TddKata1.UnitTests/obj/
+CSharp\me\TddKata1.UnitTests\obj/
