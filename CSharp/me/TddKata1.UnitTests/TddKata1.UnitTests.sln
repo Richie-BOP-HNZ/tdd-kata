@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TddKata1.UnitTests", "TddKata1.UnitTests.csproj", "{5151527A-5FD2-AF01-115E-29C640D7A647}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5151527A-5FD2-AF01-115E-29C640D7A647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5151527A-5FD2-AF01-115E-29C640D7A647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5151527A-5FD2-AF01-115E-29C640D7A647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5151527A-5FD2-AF01-115E-29C640D7A647}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {459DA20E-F90D-460A-B2E9-9D07255B2B39}
+	EndGlobalSection
+EndGlobal
