@@ -5,9 +5,11 @@
 ## Running the Kata
 
 ```powershell
-    cd .\CSharp\me\
+    cd .\CSharp\me\TddKata1
+    dotnet run
 
-    dotnet run .\TddKata1.cs
+    cd .\CSharp\me\TddKata1.UnitTests
+    dotnet test
 ```
 
 ## Visual Code Extensions
