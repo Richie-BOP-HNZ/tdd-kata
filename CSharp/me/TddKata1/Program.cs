@@ -52,6 +52,18 @@ public static class StringCalculator
             {
                 result += singleNumber;
             }
+            else if (number.Contains($"\n"))
+            {
+                var splitNewLine = number.Split($"\n");
+
+                foreach (var numberNL in splitNewLine)
+                {
+                    if (int.TryParse(numberNL, out int singleNumberNL))
+                    {
+                        result += singleNumberNL;
+                    }
+                }
+            }
         }
 
         // return result

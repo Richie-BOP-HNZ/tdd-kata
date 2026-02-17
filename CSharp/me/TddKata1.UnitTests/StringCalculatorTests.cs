@@ -86,4 +86,16 @@ public class StringCalculatorTests
         // Assert
         Assert.True(result.Equals(7));
     }
+
+    [Fact]
+    public void StringCalculatorOneNewlineTwoPlusThreeReturnsSix()
+    {
+        // Arrange
+
+        // Act
+        var result = StringCalculator.Add("1\n2,3");
+
+        // Assert
+        Assert.True(result.Equals(6));
+    }
 }
