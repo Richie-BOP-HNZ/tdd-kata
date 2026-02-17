@@ -11,7 +11,9 @@ public class StringCalculatorTests
         var result = StringCalculator.Add("");
 
         // Assert
-        Assert.True(result.Equals(0));
+        Assert.Equal(0, result.Total);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.Message);
     }
 
     [Fact]
@@ -23,7 +25,9 @@ public class StringCalculatorTests
         var result = StringCalculator.Add("ABC");
 
         // Assert
-        Assert.True(result.Equals(0));
+        Assert.Equal(0, result.Total);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.Message);
     }
 
     [Fact]
@@ -35,7 +39,9 @@ public class StringCalculatorTests
         var result = StringCalculator.Add("ABC,XYZ");
 
         // Assert
-        Assert.True(result.Equals(0));
+        Assert.Equal(0, result.Total);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.Message);
     }
 
     [Fact]
@@ -47,7 +53,9 @@ public class StringCalculatorTests
         var result = StringCalculator.Add("1");
 
         // Assert
-        Assert.True(result.Equals(1));
+        Assert.Equal(1, result.Total);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.Message);
     }
 
     [Fact]
@@ -56,10 +64,12 @@ public class StringCalculatorTests
         // Arrange
 
         // Act
-        var result = StringCalculator.Add("1,2");
+        var result = StringCalculator.Add($"//,\n1,2");
 
         // Assert
-        Assert.True(result.Equals(3));
+        Assert.Equal(3, result.Total);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.Message);
     }
 
     [Fact]
@@ -68,10 +78,12 @@ public class StringCalculatorTests
         // Arrange
 
         // Act
-        var result = StringCalculator.Add("1,2,3,4");
+        var result = StringCalculator.Add($"//,\n1,2,3,4");
 
         // Assert
-        Assert.True(result.Equals(10));
+        Assert.Equal(10, result.Total);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.Message);
     }
 
 
@@ -81,10 +93,12 @@ public class StringCalculatorTests
         // Arrange
 
         // Act
-        var result = StringCalculator.Add("1,2,,4");
+        var result = StringCalculator.Add($"//,\n1,2,,4");
 
         // Assert
-        Assert.True(result.Equals(7));
+        Assert.Equal(7, result.Total);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.Message);
     }
 
     [Fact]
@@ -93,9 +107,53 @@ public class StringCalculatorTests
         // Arrange
 
         // Act
-        var result = StringCalculator.Add("1\n2,3");
+        var result = StringCalculator.Add($"//,\n1\n2,3");
 
         // Assert
-        Assert.True(result.Equals(6));
+        Assert.Equal(6, result.Total);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.Message);
+    }
+
+    [Fact]
+    public void StringCalculatorNoDelimiterHeaderReturnsSix()
+    {
+        // Arrange
+
+        // Act
+        var result = StringCalculator.Add($"1;2;3");
+
+        // Assert
+        Assert.Equal(6, result.Total);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.Message);
+    }
+
+    [Fact]
+    public void StringCalculatorNegitiveNumberReturnsFour()
+    {
+        // Arrange
+
+        // Act
+        var result = StringCalculator.Add($"1;-2;3");
+
+        // Assert
+        Assert.Equal(4, result.Total);
+        Assert.False(result.IsSuccess);
+        Assert.NotNull(result.Message);
+    }
+
+    [Fact]
+    public void StringCalculatorMultipleNegitiveNumberReturnsFour()
+    {
+        // Arrange
+
+        // Act
+        var result = StringCalculator.Add($"1;-2;5;-1");
+
+        // Assert
+        Assert.Equal(6, result.Total);
+        Assert.False(result.IsSuccess);
+        Assert.NotNull(result.Message);
     }
 }
